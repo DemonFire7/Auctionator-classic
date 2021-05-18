@@ -1530,6 +1530,9 @@ function Atr_MakeOptionsFrameOpaque ()
           insets={left=5,right=5,top=5,bottom=5}
           }
 
+  if not InterfaceOptionsFrame.SetBackdrop then
+    Mixin(InterfaceOptionsFrame, BackdropTemplateMixin)
+  end
   InterfaceOptionsFrame:SetBackdrop ( bd );
   InterfaceOptionsFrameAddOns:SetBackdrop ( list_bd );
   InterfaceOptionsFrameCategories:SetBackdrop ( list_bd );

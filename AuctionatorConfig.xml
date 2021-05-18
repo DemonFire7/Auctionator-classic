@@ -116,7 +116,11 @@
       </TileSize>
     </Backdrop>
     <Scripts>
-      <OnLoad>self:SetBackdropColor(0.2, 0.2, 0.2);
+      <OnLoad>
+        if not self.SetBackdrop then
+          Mixin(self, BackdropTemplateMixin)
+        end
+        self:SetBackdropColor(0.2, 0.2, 0.2);
       </OnLoad>
     </Scripts>
   </Frame>

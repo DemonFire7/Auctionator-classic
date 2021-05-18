@@ -401,6 +401,9 @@ function Atr_FullScanUpdateDB()
   Atr_FullScanHTML:Hide();
   Atr_FullScanResults:Show();
 
+  if not Atr_FullScanResults.SetBackdrop then
+    Mixin(Atr_FullScanResults, BackdropTemplateMixin)
+  end
   Atr_FullScanResults:SetBackdropColor (0.3, 0.3, 0.4);
 
   if (not gDoSlowScan) then
@@ -427,6 +430,9 @@ function Atr_ShowFullScanFrame()
   Atr_FullScanResults:Hide();
 
   Atr_FullScanFrame:Show();
+  if not Atr_FullScanFrame.SetBackdrop then
+    Mixin(Atr_FullScanFrame, BackdropTemplateMixin)
+  end
   Atr_FullScanFrame:SetBackdropColor(0,0,0,100);
 
   Atr_UpdateFullScanFrame();

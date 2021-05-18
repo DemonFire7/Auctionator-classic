@@ -11,6 +11,9 @@
 
     <Scripts>
       <OnLoad>
+        if not self.SetBackdrop then
+          Mixin(self, BackdropTemplateMixin)
+        end
         self:SetBackdropColor( 0.3, 0.3, 0.7 )
       </OnLoad>
       <OnShow>
